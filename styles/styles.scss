@@ -1,0 +1,181 @@
+@import 'partials/setup';
+$font-header: 'Nova Round', cursive;
+$font-body: 'Open Sans', sans-serif;
+
+
+$color-blue:#005ed4;
+
+
+
+@mixin fontSize($sizeValue){
+    font-size: $sizeValue * 1px;
+    font-size: ($sizeValue/10) * 1rem;
+}
+
+.flex {
+	display: flex;
+	flex-flow: row wrap;
+}
+body {
+	font-family: $font-body;
+	@include fontSize(9);
+	p {
+		margin: 0;
+	}
+}
+.content {
+	max-width: 950px;
+    margin: 0 auto;
+    width: 85%;
+    color: $color-blue;
+}
+h3 {
+	font-weight: bold;
+	text-decoration: underline;
+}
+h2 {
+	@include fontSize(12);
+}
+a {
+	text-decoration: none;
+	color:#005ed4;
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+section.header{
+	 display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    img {
+    	height: 150px;
+    }
+}
+.images,.info{
+	width: 80%;
+	margin:0 auto;
+}
+
+
+
+section.bodyMain {
+	margin: 60px auto;
+	display: flex;
+	width: 90%;
+	img {
+		max-width: 360px;
+		width: 90%;
+		height: 90%;
+	}
+	.info {
+	 // margin-top: 20px;
+	 margin-left:35px;
+	 a {
+	 	h1{
+	 		margin: 0;
+	 	}
+	 }
+
+	}
+}
+.info > h3 {
+	 text-decoration: none;
+	 margin:5px auto;
+}
+.textExhition{
+	text-decoration: underline;
+}
+section.bodyPost{
+	// width:90%;
+
+	margin: 50px auto;
+	img{
+		width: 100%;
+
+	}
+}
+section.furtherInfo {
+	display:flex;
+	justify-content:space-between;
+	.mailchimp{
+		min-width: 50%;
+		font-family: $font-body;
+	}
+}
+.pastexhibtions{
+	margin-top: 20px;
+	h4{
+		margin:0;
+	}
+	i {
+		margin-right: 10px;
+	}
+	a {
+			@include fontSize(8);
+			margin-right: 10px;
+	}
+}
+.lowerBody {
+	border-top: 3px solid;
+	padding-top: 20px;
+}
+.text{
+	margin: 10px 0;
+}
+.furtherText{
+	border-top: 1px dashed;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+#mc_embed_signup .mc-field-group input{
+	// width: 75% !important;
+}
+
+#mc_embed_signup h2 {
+	font-family: $font-body;
+}
+
+@media (max-width: 710px) {
+	section.bodyMain{
+	display:block;
+	width: 78%;
+
+
+	img{
+		width: 700px;
+		width: 100%;
+		height: 100%;
+	}
+	.info{
+		margin: 0 auto;
+		text-align: center;
+	}
+	}
+	.images, .info{
+		width: 100%;
+	}
+
+}
+
+@media (max-width: 620px) {
+	.content{
+		width: 95%;
+	}
+	section.bodyMain{
+		width: 100%;
+		margin:20px auto;
+	}
+	section.pastexhibtions{
+		i,a {
+			display: block;
+		}
+	}
+	section.bodyPost{
+		margin:20px auto;
+	}
+	section.furtherInfo {
+		display: block;
+	}
+}
